@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //variable
+        let a=35;
+        console.log(a); 
+
+
+        //event
+        document.addEventListener("click",function click(){
+            console.log("clicked");
+            let conf=confirm("Are you sure?")
+            console.log(conf);
+        })
+
+
+
+        //function
+        function hey(){
+            console.log("Hi sherry...!");
+        }
+
+        //objectt
+        let obj= {
+            r:34,
+            c:64,
+            func: function func(num){
+                console.log(num);
+            }
+        }
+
+
+        let arr=[1,2,3];
+        console.log(this);
+        function myfunc(){
+
+           // console.log("Number is :" + this);
+        }
+        myfunc();
+
+//FUNCTION KA 'THIS' AUSI KA THIS HAAI BAKI KEEH LO GLOBAL HO JATE HAIN.AGAR GLOBAL E USE KRNA HAAI 
+//TO '=>' APPROACH FOLLOW KRNAPRAY GI
+            let mobj={
+                a: this,
+            myfunct: function myfuncti(number){
+                console.log(this);
+            }
+        }
+            mobj.myfunct();
+
+
+           
+            
+//BOTH HAVE SAME THIS.ONE IS WITH '=>' AND OTHER IS SIMPLE.
+//IF YOU WANT 'THIS' OF FUNCTION THEN YOU HAVE TO FOLLOW
+//UPPER APPROACH
+            let mobjj={
+                a: this,
+            myfunct: (number)=>{
+                console.log(this);
+            }
+        }
+            mobjj.myfunct();
+        console.log(mobj.a);
+
+
+
+        //
+        setTimeout(()=>{
+            console.log("Print after 3 seconds");
+        },3000)
+        console.log("Print before 3 seconds wali statement");
+    </script>
+</head>
+<body>
+   <h1>learning JS</h1>
+</body>
+</html>
